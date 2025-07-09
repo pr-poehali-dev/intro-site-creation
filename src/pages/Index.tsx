@@ -35,11 +35,23 @@ const Index = () => {
             <Button
               size="lg"
               className="bg-red-500 hover:bg-red-600 text-white px-8 py-3"
+              onClick={() =>
+                window.open("https://t.me/your_username", "_blank")
+              }
             >
               <Icon name="MessageCircle" size={20} className="mr-2" />
               Написать мне
             </Button>
-            <Button variant="outline" size="lg" className="px-8 py-3">
+            <Button
+              variant="outline"
+              size="lg"
+              className="px-8 py-3"
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
               <Icon name="Download" size={20} className="mr-2" />
               Портфолио
             </Button>
@@ -194,7 +206,10 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+      <section
+        id="contact"
+        className="py-20 px-6 bg-gradient-to-br from-slate-900 to-slate-800 text-white"
+      >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4">Как связаться</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-cyan-500 mx-auto mb-8"></div>
@@ -206,33 +221,66 @@ const Index = () => {
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div
+                className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4 cursor-pointer hover:scale-110 transition-transform"
+                onClick={() =>
+                  window.open("https://t.me/your_username", "_blank")
+                }
+              >
                 <Icon name="MessageCircle" size={32} className="text-white" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Telegram</h3>
-              <p className="text-slate-400">@your_username</p>
+              <a
+                href="https://t.me/your_username"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-white transition-colors"
+              >
+                @your_username
+              </a>
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div
+                className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-4 cursor-pointer hover:scale-110 transition-transform"
+                onClick={() => window.open("mailto:your@email.com", "_blank")}
+              >
                 <Icon name="Mail" size={32} className="text-white" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Email</h3>
-              <p className="text-slate-400">your@email.com</p>
+              <a
+                href="mailto:your@email.com"
+                className="text-slate-400 hover:text-white transition-colors"
+              >
+                your@email.com
+              </a>
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div
+                className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 cursor-pointer hover:scale-110 transition-transform"
+                onClick={() =>
+                  window.open("https://github.com/yourname", "_blank")
+                }
+              >
                 <Icon name="Github" size={32} className="text-white" />
               </div>
               <h3 className="text-lg font-semibold mb-2">GitHub</h3>
-              <p className="text-slate-400">github.com/yourname</p>
+              <a
+                href="https://github.com/yourname"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-white transition-colors"
+              >
+                github.com/yourname
+              </a>
             </div>
           </div>
 
           <Button
             size="lg"
             className="bg-gradient-to-r from-red-500 to-cyan-500 hover:from-red-600 hover:to-cyan-600 text-white px-12 py-4 text-lg"
+            onClick={() => window.open("https://t.me/your_username", "_blank")}
           >
             <Icon name="Send" size={24} className="mr-3" />
             Начать проект
